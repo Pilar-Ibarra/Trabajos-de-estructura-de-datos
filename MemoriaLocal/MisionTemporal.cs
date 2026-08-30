@@ -7,25 +7,65 @@ namespace MemoriaLocalProyecto
         public void EjecutarMision(string nombreMision)
         {
             
-            int energiaInicial = 100;
-            string estado = "Activa";
-            DateTime horaInicio = DateTime.Now;
+            int energiaLocal = 100;
+            int intentosRestantes = 3;
+            bool misionEnCurso = true;
 
-            Console.WriteLine($"\n[ STACK] Entrando a la misión: '{nombreMision}'");
-            Console.WriteLine($"- Variable local 'energiaInicial': {energiaInicial}");
-            Console.WriteLine($"- Variable local 'estado': {estado}");
-            Console.WriteLine($"- Variable local 'horaInicio': {horaInicio:HH:mm:ss}");
+            Console.WriteLine($"\n[ STACK] Iniciando misión local: '{nombreMision}'");
+            Console.WriteLine("Variables locales creadas en memoria local. ¡Comienza el desafío interactivo!\n");
 
-            
-            for (int i = 1; i <= 3; i++)
+
+            while (misionEnCurso && intentosRestantes > 0 && energiaLocal > 0)
             {
-                
-                int energiaConsumida = i * 15;
-                int energiaRestante = energiaInicial - energiaConsumida;
-                Console.WriteLine($"  -> Iteración {i}: Energía consumida = {energiaConsumida}, Restante = {energiaRestante}");
+                Console.WriteLine($"--- ESTADO DE LA MISIÓN ---");
+                Console.WriteLine($"Energía local actual: {energiaLocal}");
+                Console.WriteLine($"Intentos locales restantes: {intentosRestantes}");
+                Console.WriteLine("----------------------------");
+                Console.WriteLine("1. Hackear sistema (-20 energía)");
+                Console.WriteLine("2. Forzar acceso directo (-50 energía y -1 intento)");
+                Console.WriteLine("3. Abortar misión y salir");
+                Console.Write("Elige una acción interactiva: ");
+
+                string opcion = Console.ReadLine() ?? "";
+
+                if (opcion == "1")
+                {
+                    energiaLocal -= 20;
+                    Console.WriteLine("\n[Éxito] ¡Sistema hackeado con éxito!");
+                    misionEnCurso = false; 
+                }
+                else if (opcion == "2")
+                {
+                    energiaLocal -= 50;
+                    intentosRestantes--;
+                    Console.WriteLine("\n[Aviso] Acceso forzado a la fuerza bruta.");
+                    
+                    if (energiaLocal <= 0 || intentosRestantes <= 0)
+                    {
+                        Console.WriteLine("[Derrota] Te has quedado sin recursos locales.");
+                        misionEnCurso = false;
+                    }
+                }
+                else if (opcion == "3")
+                {
+                    Console.WriteLine("\n[Abortado] Has decidido escapar.");
+                    misionEnCurso = false;
+                }
+                else
+                {
+                    Console.WriteLine("\n[Error] Opción no válida, intenta de nuevo.");
+                }
+
+                if (misionEnCurso)
+                {
+                    Console.WriteLine("\nPresiona una tecla para continuar la misión...");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
             }
 
-            Console.WriteLine($"[STACK] Saliendo de la misión '{nombreMision}'. Las variables locales acaban de morir.");
+            Console.WriteLine($"\n[ STACK] Saliendo del método de la misión '{nombreMision}'.");
+            Console.WriteLine("¡PUM! Las variables locales ('energiaLocal', 'intentosRestantes', 'misionEnCurso') acaban de desaparecer de la memoria RAM.");
         }
     }
 }
