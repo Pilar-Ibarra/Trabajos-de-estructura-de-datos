@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Drones(MemoriaEstatica)")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Alquimia(NoTDA)")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ed7c2311dc2c33ad26b6d18feef583ff4329936")]
-[assembly: System.Reflection.AssemblyProductAttribute("Drones(MemoriaEstatica)")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Drones(MemoriaEstatica)")]
+[assembly: System.Reflection.AssemblyProductAttribute("Alquimia(NoTDA)")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Alquimia(NoTDA)")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
