@@ -1,8 +1,0 @@
-# Dependencias y compilados de .NET
-[Bb]in/
-[Oo]bj/
-.vs/
-*.user
-*.suo
-project.lock.json
-project.assets.json
