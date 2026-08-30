@@ -15,7 +15,7 @@ namespace AlquimiaProyecto
             while (continuar)
             {
                 Console.Clear();
-                Console.WriteLine("=== LABORATORIO DE POCIONES (ARRAY TRADICIONAL) ===");
+                Console.WriteLine("=== LABORATORIO DE POCIONES===");
                 Console.WriteLine($"Pociones activas: {contadorPociones} / Capacidad : {laboratorio.Length}");
                 Console.WriteLine("==================================================");
                 Console.WriteLine("1. Fabricar nueva poción ");
